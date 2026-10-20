@@ -1,7 +1,7 @@
 // src/app/page.tsx
 import { BRAND, FAQ, frenchSeedStats } from "@/content";
 import { listDrawsSafe } from "@/core";
-import { Card, LinkButton, Notice, fmtDate } from "@/ui";
+import { Card, LinkButton, fmtDate } from "@/ui";
 
 export const revalidate = 3600;
 
@@ -59,7 +59,6 @@ export default async function Home() {
           </details>
         ))}
       </section>
-      <Notice>Cap7 n’est affilié ni à France Éducation international, ni à la CCI Paris Île-de-France, ni à IRCC. Estimations indicatives non officielles.</Notice>
     </>
   );
 }

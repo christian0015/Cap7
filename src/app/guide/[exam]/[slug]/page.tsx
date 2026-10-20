@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { allGuideParams, buildGuide, isExam } from "@/content";
-import { DataTable, LinkButton, Notice } from "@/ui";
+import { DataTable, LinkButton } from "@/ui";
 
 export const dynamicParams = false;
 export const revalidate = 86400;
@@ -58,7 +58,6 @@ export default async function Guide({ params }: P) {
         ))}
       </section>
       <p><LinkButton href={g.cta.href}>{g.cta.label}</LinkButton></p>
-      <Notice>Estimations indicatives non officielles. Vérifiez toujours les exigences sur les pages officielles d’IRCC et de l’organisme d’examen.</Notice>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
     </article>
   );

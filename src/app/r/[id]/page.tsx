@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { EXAMS } from "@/content";
 import { publicCard } from "@/core";
-import { LinkButton, Notice, fmtDate } from "@/ui";
+import { LinkButton, fmtDate } from "@/ui";
 
 type P = { params: Promise<{ id: string }> };
 const okId = (id: string) => /^[a-f0-9-]{36}$/.test(id);
@@ -28,7 +28,6 @@ export default async function Carte({ params }: P) {
         <p className="big">NCLC {c.low === c.high ? c.high : `${c.low} à ${c.high}`}</p>
         <p className="muted">Estimation du {fmtDate(c.date)}, établie avec Cap7.</p>
       </div>
-      <Notice>Estimation indicative non officielle, sans valeur de résultat d’examen. Cap7 n’est affilié ni à France Éducation international, ni à la CCI Paris Île-de-France, ni à IRCC.</Notice>
       <p><LinkButton href="/connexion?mode=register">Essayer une correction gratuite</LinkButton></p>
     </>
   );
